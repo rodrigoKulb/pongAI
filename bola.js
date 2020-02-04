@@ -43,7 +43,7 @@ class Bola {
 					{
 						for (let i = raqueteRights.length - 1; i >= 0; i--) 
 						{
-							console.log(i+" -> "+raqueteRights[i].y);
+							//console.log(i+" -> "+raqueteRights[i].y);
 							if(raqueteRights[i].y==p.y)
 							{
 							 	savedRaquete.push(raqueteRights[i]);
@@ -56,7 +56,7 @@ class Bola {
 						}		
 						var diff = this.y - (p.y - p.h/2);
 						var angle = map(diff, 0, p.h,  radians(225), radians(135));
-						console.log(angle);
+						// console.log(angle);
 						this.xspeed = 5 * cos(angle);
 						this.yspeed  = 5 * sin(angle);
 						this.x = p.x - p.w/2 - this.r;

@@ -6,7 +6,7 @@ class Raquete{
 	this.h = 120;
 	this.ychange = 0;
 	this.fitness = 0;
-	this.score = 1;
+	this.score = 0;
 	
 		if(lado=='left')
 		{
@@ -35,6 +35,7 @@ class Raquete{
 	
 	update()
 	{
+		this.score++;	
 		this.y += this.ychange;
 		this.y = constrain(this.y,this.h/2,height-this.h/2)
 	}

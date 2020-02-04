@@ -8,7 +8,7 @@
 // https://youtube.com/rodrigoKulb
 
 function nextGeneration() {
-  console.log('next generation');
+  // console.log('next generation');
   calculateFitness();
   for (let i = 0; i < TOTAL; i++) {
     raqueteRights[i] = pickOne();
@@ -25,6 +25,7 @@ function pickOne() {
 
   }
   index--;
+  //console.log(savedRaquete[index].fitness);
   let raqueteRight = savedRaquete[index];
   let child = new Raquete("right",raqueteRight.brain);
   child.mutate();
@@ -35,7 +36,9 @@ function calculateFitness() {
   let sum = 0;
   for (let raqueteRight of savedRaquete) {
     sum += raqueteRight.score;
+	//console.log(raqueteRight.score);
   }
+  
   for (let raqueteRight of savedRaquete) {
     raqueteRight.fitness = raqueteRight.score / sum;
   }
