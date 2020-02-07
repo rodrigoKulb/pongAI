@@ -36,6 +36,7 @@ class Raquete{
 	update()
 	{
 		this.score++;	
+		document.getElementById('maiorPonto').value = this.score;
 		this.y += this.ychange;
 		this.y = constrain(this.y,this.h/2,height-this.h/2)
 	}

@@ -7,6 +7,7 @@
 // Editado por Rodrigo Kulb
 // https://youtube.com/rodrigoKulb
 
+
 function nextGeneration() {
   // console.log('next generation');
   calculateFitness();
@@ -17,16 +18,28 @@ function nextGeneration() {
 }
 
 function pickOne() {
-  let index = 0;
+let maior = 0;
+let melhor;
+ let index = 0;
+	/* comentado por rodrigo kulb 06/02/2020
   let r = random(1);
   while (r > 0) {
  r = r - savedRaquete[index].fitness;
  index++;
+*/	
+	for (let savedRaqueteBest of savedRaquete) 
+	{
+		if(savedRaqueteBest.score>=maior)
+		{
+			maior = savedRaqueteBest.score;
+			melhor = savedRaqueteBest;
+		}
+	}
 
-  }
+  console.log(maior);
   index--;
-  //console.log(savedRaquete[index].fitness);
-  let raqueteRight = savedRaquete[index];
+	//console.log(savedRaquete[index]);
+  let raqueteRight = melhor;
   let child = new Raquete("right",raqueteRight.brain);
   child.mutate();
   return child;
