@@ -8,7 +8,7 @@ O mais divertido é ver o AI ganhando do Computador.
 Ainda quero evoluir muito esse codigo, em breve vou postar um video explicando sobre como desenvolvi.
 
 ## DEMO
-http://rodrigo-kulb.com.br/pong
+http://rodrigo-kulb.com.br/pongAI
 
 ## Exemplo:
 
