@@ -23,7 +23,7 @@ class Raquete{
     	} 
 		else 
 		{
-      		this.brain = new NeuralNetwork(5, 8, 3);
+      		this.brain = new NeuralNetwork(3, 8, 2);
     	}	
 		
 	 }
@@ -53,25 +53,25 @@ class Raquete{
     inputs[0] = this.y / height; // posição da raquete
     inputs[1] = bola.x / width; // x da bolinha
     inputs[2] = bola.y / height; // y da bolinha
-    inputs[3] = bola.xspeed / 10
-    inputs[4] = bola.yspeed / 10
+   // inputs[3] = bola.xspeed / 10
+   // inputs[4] = bola.yspeed / 10
 	this.inputs = inputs;
 	
     let output = this.brain.predict(inputs);
 	//console.log(output);
    
-    if (output[0] == Math.max(output[0], output[1],output[2]))
+    if (output[0] == Math.max(output[0], output[1]))
 	{
      	this.move(10);
     }
-	else if (output[1] == Math.max(output[0], output[1],output[2]))
+	else if (output[1] == Math.max(output[0], output[1]))
 	{
 		this.move(-10);
 	}
-	else if (output[2] == Math.max(output[0], output[1],output[2]))
+	/*else if (output[2] == Math.max(output[0], output[1],output[2]))
 	{
 		this.move(0);
-	}
+	}*/
 	
   }
 

@@ -38,11 +38,21 @@ let melhor;
 
   console.log(maior);
   index--;
-	//console.log(savedRaquete[index]);
-  let raqueteRight = melhor;
-  let child = new Raquete("right",raqueteRight.brain);
-  child.mutate();
-  return child;
+  if(maior>10000)
+  {
+		//console.log(savedRaquete[index]);
+	  let raqueteRight = melhor;
+	  let child = new Raquete("right",raqueteRight.brain);
+	  child.mutate();
+	  return child;
+  }
+  else
+  {
+	  let raqueteRight = melhor;
+	  let child = new Raquete("right");
+	  child.mutate();
+	  return child;
+	 }
 }
 
 function calculateFitness() {

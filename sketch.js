@@ -1,3 +1,4 @@
+
 let brain;
 let bola;
 let raqueteRights = [];
@@ -9,6 +10,7 @@ let leftScore = 0;
 let rightScore = 0;
 let cycles = 100;
 const TOTAL = 200;
+let pontosPC = 0;
 
 function setup() {
 	

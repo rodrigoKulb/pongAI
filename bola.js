@@ -115,6 +115,12 @@ class Bola {
 		{
 			this.reset();
 			leftScore++;
+			pontosPC++;
+			if(pontosPC>=20)
+			{
+				pontosPC = 0;
+				brain = '';
+			}
 			if(this.score>1 && savedRaquete.length)
 			{
 				nextGeneration();
