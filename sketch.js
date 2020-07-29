@@ -15,6 +15,7 @@ let pontosPC = 0;
 function setup() {
 	
     createCanvas(640, 480);
+	paragraph = createP('Velocidade:');	
 	slider = createSlider(1,100,1);
  	bola = new Bola(brain);
 	raqueteLeft = new Raquete("left");
@@ -35,28 +36,29 @@ function draw() {
 		raqueteLeft.show();
 		raqueteLeft.update();
 		
-		//ROBO JOGANDO NA ESQUERDA
-		if(raqueteLeft.y>bola.y-20)
+		//Raquete do computador
+
+		if(raqueteLeft.y>bola.y-50)
 		{
-			raqueteLeft.y= raqueteLeft.y-2;
+			raqueteLeft.y -= 3;
 		}
-		if(raqueteLeft.y<bola.y+20)
+		if(raqueteLeft.y<bola.y+50)
 		{
-			raqueteLeft.y= raqueteLeft.y+3;
+			raqueteLeft.y += 2;
 		}
 		
 		for (let raqueteRight of raqueteRights) 
 		{	
-			raqueteRight.show();
+			raqueteRight.show(); 
 			raqueteRight.think(bola);	
 			raqueteRight.update();
 			bola.raqueteCheck("right",raqueteRight);
-		}
+		} 
 
 		if (raqueteRights.length === 0) 
 		{
 			counter = 0;
-      		nextGeneration();
+      		nextGeneration(); 
 	    }
 
 		bola.update();
@@ -65,8 +67,8 @@ function draw() {
 	
 		fill(255);
 		textSize(20);
-		text(leftScore+" - Computer", 35, 40);
-		text("Tensorflow - "+rightScore, width-160, 40);
+		text(leftScore+" - Computer", 40, 40);
+		text("AI - "+rightScore, width-100, 40);
 	}
 }
 

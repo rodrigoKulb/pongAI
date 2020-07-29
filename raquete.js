@@ -23,7 +23,7 @@ class Raquete{
     	} 
 		else 
 		{
-      		this.brain = new NeuralNetwork(3, 8, 2);
+      		this.brain = new NeuralNetwork(3, 8, 1);
     	}	
 		
 	 }
@@ -60,11 +60,11 @@ class Raquete{
     let output = this.brain.predict(inputs);
 	//console.log(output);
    
-    if (output[0] == Math.max(output[0], output[1]))
+    if (output[0] > 0.5)
 	{
      	this.move(10);
     }
-	else if (output[1] == Math.max(output[0], output[1]))
+	else 
 	{
 		this.move(-10);
 	}

@@ -14,8 +14,7 @@ class Bola {
 	this.score = 0;
 	 }
 	 
-	 
-
+	
 	 
 	 
 	raqueteCheck(lado,p)
@@ -32,10 +31,10 @@ class Bola {
 						this.xspeed = 5 * cos(angle);
 						this.yspeed  = 5 * sin(angle);
 						this.x = p.x + p.w/2+ this.r;
-					}
+					} 
 			}
 		}
-		else if(lado=="right")
+		else if(lado=="right") 
 		{
 			if(this.y < p.y + p.h/2 &&  this.y > p.y - p.h/2 && this.x + this.r  > p.x - p.w/2)
 			{
@@ -124,6 +123,7 @@ class Bola {
 			if(this.score>1 && savedRaquete.length)
 			{
 				nextGeneration();
+				addInfo(this.score);
 			}
 		}
 		if(this.x <0)
